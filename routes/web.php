@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// PHPINFO: check MongoDB Extension
 Route::get('/info', function () {
     phpinfo();
 });
+
