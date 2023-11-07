@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserMongoDBController;
 use App\Models\UserMongoDB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -33,7 +34,7 @@ Route::get('/ping', function (Request $request) {
     return ['msg' => $msg];
 });
 
-Route::get('/create_user_mongo', function (Request $request) {
+Route::get('/user_create', function (Request $request) {
     $success = UserMongoDB::create([
         'guid' => 'cust_1111',
         'first_name' => 'Marco',
@@ -45,4 +46,16 @@ Route::get('/create_user_mongo', function (Request $request) {
        'status' => 'OK',
        'success' => $success,
     ]);
+});
+
+Route::apiResource('users', UserMongoDBController::class);
+
+/*
+    Find a record using Eloquent + MongoDB
+*/
+Route::get('/find_eloquent/', function (Request $request) {
+
+    $customer = UserMongoDB::where('guid', 'cust_1111')->get();
+
+    return ['status' => 'executed', 'data' => $customer];
 });
