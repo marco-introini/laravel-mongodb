@@ -1,0 +1,6 @@
+GET {{ENDPOINT}}/api/ping
+
+###
+
+GET {{ENDPOINT}}/api/user_create
+Accept: application/json

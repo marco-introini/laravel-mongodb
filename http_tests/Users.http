@@ -1,0 +1,47 @@
+# @name All Users
+GET {{ENDPOINT}}/api/users
+Content-Type: application/json
+
+###
+POST {{ENDPOINT}}/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "guid": "mint",
+    "first_name": "mint",
+    "email": "mint@test.com",
+    "password": "password"
+}
+
+###
+GET {{ENDPOINT}}/api/users/mint
+Content-Type: application/json
+Accept: application/json
+
+###
+PATCH {{ENDPOINT}}/api/users/mint
+Content-Type: application/json
+Accept: application/json
+
+{
+    "guid": "mint",
+    "first_name": "mintUPDATED",
+    "email": "mint@test.com",
+    "password": "password"
+}
+
+###
+GET {{ENDPOINT}}/api/users/mint
+Content-Type: application/json
+Accept: application/json
+
+###
+DELETE {{ENDPOINT}}/api/users/mint
+Content-Type: application/json
+Accept: application/json
+
+###
+GET {{ENDPOINT}}/api/users/mint
+Content-Type: application/json
+Accept: application/json
